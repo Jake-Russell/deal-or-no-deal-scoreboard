@@ -10,27 +10,32 @@ import { Prize } from '../prize.model';
 export class PrizeListComponent {
   smallPrizes: Prize[] = [
     {
+      name: 'Bag of Wotsit Crunch',
+      prizeType: PrizeType.Small,
+      available: true,
+    },
+    {
       name: "McDonald's Date",
       prizeType: PrizeType.Small,
       available: true,
     },
     {
-      name: 'Chocolate Bar',
+      name: '£10',
       prizeType: PrizeType.Small,
       available: true,
     },
     {
-      name: 'Small Prize 3',
+      name: 'Trip to the Cinema',
       prizeType: PrizeType.Small,
       available: true,
     },
     {
-      name: 'Small Prize 4',
+      name: 'Chinese Takeaway',
       prizeType: PrizeType.Small,
       available: true,
     },
     {
-      name: 'Small Prize 5',
+      name: 'Trip to Cotswold Wildlife Park',
       prizeType: PrizeType.Small,
       available: true,
     },
@@ -38,27 +43,32 @@ export class PrizeListComponent {
 
   bigPrizes: Prize[] = [
     {
-      name: 'Big Prize 1',
+      name: 'Dinner Date at a Restaurant of Your Choice',
       prizeType: PrizeType.Big,
       available: true,
     },
     {
-      name: 'Big Prize 2',
+      name: 'Go Ape',
       prizeType: PrizeType.Big,
       available: true,
     },
     {
-      name: 'Big Prize 3',
+      name: "I'm a Celebrity Jungle Challenge",
       prizeType: PrizeType.Big,
       available: true,
     },
     {
-      name: 'Big Prize 4',
+      name: '£100',
       prizeType: PrizeType.Big,
       available: true,
     },
     {
-      name: 'Big Prize 5',
+      name: "Couple's Spa Day",
+      prizeType: PrizeType.Big,
+      available: true,
+    },
+    {
+      name: 'Weekend Staycation',
       prizeType: PrizeType.Big,
       available: true,
     },
