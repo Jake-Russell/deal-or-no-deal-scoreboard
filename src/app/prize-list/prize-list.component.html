@@ -4,5 +4,16 @@
 </div>
 
 <div class="parent">
-  <app-prize *ngFor="let prize of prizes" [prize]="prize"></app-prize>
+  <div class="child">
+    <app-prize
+      *ngFor="let smallPrize of smallPrizes"
+      [prize]="smallPrize"
+    ></app-prize>
+  </div>
+  <div class="child">
+    <app-prize
+      *ngFor="let bigPrize of bigPrizes"
+      [prize]="bigPrize"
+    ></app-prize>
+  </div>
 </div>

@@ -1,9 +1,14 @@
 .content-wrapper {
   margin: 20px;
+  text-align: center;
 }
 
 .parent {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.child {
+  width: 40%;
 }
