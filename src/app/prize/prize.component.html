@@ -1,0 +1,10 @@
+<mat-card
+  (click)="click()"
+  [ngClass]="{
+    'big-prize': prize.prizeType == 'Big',
+    'small-prize': prize.prizeType == 'Small',
+    unavailable: !prize.available
+  }"
+>
+  <mat-card-title>{{ prize.name }}</mat-card-title>
+</mat-card>

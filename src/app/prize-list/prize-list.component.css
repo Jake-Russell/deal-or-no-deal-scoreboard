@@ -1,0 +1,9 @@
+.content-wrapper {
+  margin: 20px;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
