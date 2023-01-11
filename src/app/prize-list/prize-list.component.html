@@ -5,12 +5,19 @@
 
 <div class="parent">
   <div class="child">
+    <h2>
+      Number of Available Small Prizes =
+      {{ this.prizeService.smallPrizeNumber }}
+    </h2>
     <app-prize
       *ngFor="let smallPrize of smallPrizes"
       [prize]="smallPrize"
     ></app-prize>
   </div>
   <div class="child">
+    <h2>
+      Number of Available Big Prizes = {{ this.prizeService.bigPrizeNumber }}
+    </h2>
     <app-prize
       *ngFor="let bigPrize of bigPrizes"
       [prize]="bigPrize"

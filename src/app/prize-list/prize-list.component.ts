@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { PrizeType } from '../prize-type.enum';
 import { Prize } from '../prize.model';
+import { PrizeService } from '../prize.service';
 
 @Component({
   selector: 'app-prize-list',
   templateUrl: './prize-list.component.html',
   styleUrls: ['./prize-list.component.css'],
 })
-export class PrizeListComponent {
+export class PrizeListComponent implements OnInit {
+  constructor(protected prizeService: PrizeService) { }
+
   smallPrizes: Prize[] = [
     {
       name: 'Bag of Wotsit Crunch',
@@ -73,4 +76,9 @@ export class PrizeListComponent {
       available: true,
     },
   ];
+
+  ngOnInit(): void {
+    this.prizeService.bigPrizeNumber = this.bigPrizes.length
+    this.prizeService.smallPrizeNumber = this.smallPrizes.length
+  }
 }
