@@ -2,11 +2,6 @@ img {
   width: 10vw;
 }
 
-.content-wrapper {
-  margin: 20px;
-  text-align: center;
-}
-
 .parent {
   display: flex;
   justify-content: space-evenly;
