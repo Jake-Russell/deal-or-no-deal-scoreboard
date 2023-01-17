@@ -18,13 +18,15 @@ export class PrizeComponent {
     if (this.prize.available) {
       this.prize.available = false;
       this.prizeService.numberOfPrizesRemoved++;
-      if (this.prize.prizeType == PrizeType.Big) {
-        this.prizeService.bigPrizeNumber--;
-      } else {
-        this.prizeService.smallPrizeNumber--;
-      }
+      this.prizeService.removePrize(this.prize);
+
       if (this.prizeService.callBanker()) {
         console.log('***CALLING BANKER***');
+        this.bankerCall.emit();
+      }
+      if (
+        this.prizeService.getAllAvailablePrizes().length == 1
+      ) {
         this.bankerCall.emit();
       }
     }

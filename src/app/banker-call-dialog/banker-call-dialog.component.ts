@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { PrizeService } from '../prize.service';
 
 @Component({
   selector: 'app-banker-call-dialog',
@@ -7,7 +8,10 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./banker-call-dialog.component.css'],
 })
 export class BankerCallDialogComponent {
-  constructor(private dialogRef: MatDialogRef<BankerCallDialogComponent>) {}
+  constructor(
+    private dialogRef: MatDialogRef<BankerCallDialogComponent>,
+    protected prizeService: PrizeService
+  ) {}
 
   click(deal: boolean) {
     this.dialogRef.close(deal);
