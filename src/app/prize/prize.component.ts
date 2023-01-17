@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PrizeType } from '../prize-type.enum';
 import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
@@ -10,6 +10,7 @@ import { PrizeService } from '../prize.service';
 })
 export class PrizeComponent {
   @Input() prize!: Prize;
+  @Output() bankerCall = new EventEmitter();
 
   constructor(private prizeService: PrizeService) {}
 
@@ -24,6 +25,7 @@ export class PrizeComponent {
       }
       if (this.prizeService.callBanker()) {
         console.log('***CALLING BANKER***');
+        this.bankerCall.emit();
       }
     }
   }

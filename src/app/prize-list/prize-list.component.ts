@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { BankerCallDialogComponent } from '../banker-call-dialog/banker-call-dialog.component';
 import { PrizeType } from '../prize-type.enum';
 import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
@@ -9,7 +11,10 @@ import { PrizeService } from '../prize.service';
   styleUrls: ['./prize-list.component.css'],
 })
 export class PrizeListComponent implements OnInit {
-  constructor(protected prizeService: PrizeService) { }
+  constructor(
+    protected prizeService: PrizeService,
+    private dialog: MatDialog
+  ) {}
 
   smallPrizes: Prize[] = [
     {
@@ -78,7 +83,21 @@ export class PrizeListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.prizeService.bigPrizeNumber = this.bigPrizes.length
-    this.prizeService.smallPrizeNumber = this.smallPrizes.length
+    this.prizeService.bigPrizeNumber = this.bigPrizes.length;
+    this.prizeService.smallPrizeNumber = this.smallPrizes.length;
+  }
+
+  bankerCall(): void {
+    const dialogRef = this.dialog.open(BankerCallDialogComponent, {
+      width: '50%',
+      // data: {
+      //   car,
+      //   enableDelete: true
+      // }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      // this.cars$ = this.carService.getAllCars(this.sortBy, this.searchTerm);
+      console.log('Closed');
+    });
   }
 }

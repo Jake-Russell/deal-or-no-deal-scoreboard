@@ -12,6 +12,7 @@
     <app-prize
       *ngFor="let smallPrize of smallPrizes"
       [prize]="smallPrize"
+      (bankerCall)="bankerCall()"
     ></app-prize>
   </div>
   <div class="child">
@@ -21,6 +22,7 @@
     <app-prize
       *ngFor="let bigPrize of bigPrizes"
       [prize]="bigPrize"
+      (bankerCall)="bankerCall()"
     ></app-prize>
   </div>
 </div>
