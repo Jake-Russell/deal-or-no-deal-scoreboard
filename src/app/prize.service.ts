@@ -11,7 +11,6 @@ export class PrizeService {
   numberOfPrizesRemoved = 0;
 
   callBanker(): boolean {
-    // return this.numberOfPrizesRemoved % 5 == 0;
-    return true;
+    return this.numberOfPrizesRemoved % 5 == 0;
   }
 }
