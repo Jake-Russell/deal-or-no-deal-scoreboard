@@ -1,4 +1,15 @@
 <div class="content-wrapper">
   <img src="../../assets/images/deal_or_no_deal_phone.png" alt="" />
   <h1>The banker is calling!</h1>
+
+  <div mat-dialog-actions>
+    <button mat-button class="deal" (click)="click(true)">
+      <mat-icon>check</mat-icon>
+      Deal
+    </button>
+    <button mat-button class="no-deal" (click)="click(false)">
+      <mat-icon>close</mat-icon>
+      No Deal
+    </button>
+  </div>
 </div>

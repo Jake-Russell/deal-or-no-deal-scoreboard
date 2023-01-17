@@ -90,14 +90,15 @@ export class PrizeListComponent implements OnInit {
   bankerCall(): void {
     const dialogRef = this.dialog.open(BankerCallDialogComponent, {
       width: '50%',
+      disableClose: true,
       // data: {
       //   car,
       //   enableDelete: true
       // }
     });
-    dialogRef.afterClosed().subscribe(() => {
+    dialogRef.afterClosed().subscribe((result) => {
       // this.cars$ = this.carService.getAllCars(this.sortBy, this.searchTerm);
-      console.log('Closed');
+      console.log(result);
     });
   }
 }

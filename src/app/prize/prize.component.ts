@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PrizeType } from '../prize-type.enum';
 import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';

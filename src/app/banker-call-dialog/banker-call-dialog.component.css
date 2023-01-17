@@ -1,3 +1,27 @@
 img {
   width: 10vw;
 }
+
+button {
+  width: 40%;
+}
+
+.no-deal {
+  background: rgb(216, 74, 59);
+  background: linear-gradient(
+    rgba(216, 74, 59, 1) 0%,
+    rgba(162, 29, 45, 1) 100%
+  );
+}
+
+.deal {
+  background: rgb(69, 154, 201);
+  background: linear-gradient(
+    rgba(69, 154, 201, 1) 0%,
+    rgba(24, 102, 154, 1) 100%
+  );
+}
+
+.mat-mdc-dialog-actions {
+  justify-content: space-evenly;
+}
