@@ -14,13 +14,13 @@ export class PrizeComponent {
   constructor(private prizeService: PrizeService) {}
 
   click() {
-    this.prize.available = false;
-    if (this.prize.prizeType == PrizeType.Big) {
-      console.log('Big Prize');
-      this.prizeService.bigPrizeNumber--;
-    } else {
-      console.log('Small Prize');
-      this.prizeService.smallPrizeNumber--;
+    if (this.prize.available) {
+      this.prize.available = false;
+      if (this.prize.prizeType == PrizeType.Big) {
+        this.prizeService.bigPrizeNumber--;
+      } else {
+        this.prizeService.smallPrizeNumber--;
+      }
     }
   }
 }
