@@ -8,4 +8,10 @@ export class PrizeService {
 
   smallPrizeNumber = 0;
   bigPrizeNumber = 0;
+  numberOfPrizesRemoved = 0;
+
+  callBanker(): boolean {
+    console.log(this.numberOfPrizesRemoved % 5);
+    return this.numberOfPrizesRemoved % 5 == 0;
+  }
 }

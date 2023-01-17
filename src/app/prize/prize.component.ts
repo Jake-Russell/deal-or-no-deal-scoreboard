@@ -16,10 +16,14 @@ export class PrizeComponent {
   click() {
     if (this.prize.available) {
       this.prize.available = false;
+      this.prizeService.numberOfPrizesRemoved++;
       if (this.prize.prizeType == PrizeType.Big) {
         this.prizeService.bigPrizeNumber--;
       } else {
         this.prizeService.smallPrizeNumber--;
+      }
+      if (this.prizeService.callBanker()) {
+        console.log('***CALLING BANKER***');
       }
     }
   }
