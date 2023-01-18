@@ -6,7 +6,7 @@ import { Prize } from './prize.model';
   providedIn: 'root',
 })
 export class PrizeService {
-  private smallPrizes: Prize[] = [
+  private prizes: Prize[] = [
     {
       name: 'Bag of Wotsit Crunch',
       prizeType: PrizeType.Small,
@@ -37,9 +37,6 @@ export class PrizeService {
       prizeType: PrizeType.Small,
       available: true,
     },
-  ];
-
-  private bigPrizes: Prize[] = [
     {
       name: 'Dinner Date at a Restaurant of Your Choice',
       prizeType: PrizeType.Big,
@@ -87,68 +84,36 @@ export class PrizeService {
   }
 
   removePrize(prizeToRemove: Prize) {
-    if (prizeToRemove.prizeType == PrizeType.Small) {
-      this.smallPrizes.forEach((prize) => {
-        if (prize.name == prizeToRemove.name) {
-          prize.available = false;
-        }
-      });
+    this.prizes.forEach((prize) => {
+      if (prize.name == prizeToRemove.name) {
+        prize.available = false;
+      }
       this.calculateNumberOfAvailableSmallPrizes();
-    } else {
-      this.bigPrizes.forEach((prize) => {
-        if (prize.name == prizeToRemove.name) {
-          prize.available = false;
-        }
-      });
       this.calculateNumberOfAvailableBigPrizes();
-    }
+    });
   }
 
   getAllSmallPrizes(): Prize[] {
-    return this.smallPrizes;
+    return this.prizes.filter((prize) => prize.prizeType == PrizeType.Small);
   }
 
   getAllBigPrizes(): Prize[] {
-    return this.bigPrizes;
+    return this.prizes.filter((prize) => prize.prizeType == PrizeType.Big);
   }
 
   getAllAvailablePrizes(): Prize[] {
-    var availablePrizes: Prize[] = [];
-    if (this.numberOfSmallPrizesAvailable != 0) {
-      this.smallPrizes.forEach((prize) => {
-        if (prize.available) {
-          availablePrizes.push(prize);
-        }
-      });
-    }
-    if (this.numberOfBigPrizesAvailable != 0) {
-      this.bigPrizes.forEach((prize) => {
-        if (prize.available) {
-          availablePrizes.push(prize);
-        }
-      });
-    }
-
-    return availablePrizes;
+    return this.prizes.filter((prize) => prize.available);
   }
 
   private calculateNumberOfAvailableSmallPrizes() {
-    var count = 0;
-    this.smallPrizes.forEach((prize) => {
-      if (prize.available) {
-        count++;
-      }
-    });
-    this.numberOfSmallPrizesAvailable = count;
+    this.numberOfSmallPrizesAvailable = this.prizes.filter(
+      (prize) => prize.available && prize.prizeType == PrizeType.Small
+    ).length;
   }
 
   private calculateNumberOfAvailableBigPrizes() {
-    var count = 0;
-    this.bigPrizes.forEach((prize) => {
-      if (prize.available) {
-        count++;
-      }
-    });
-    this.numberOfBigPrizesAvailable = count;
+    this.numberOfBigPrizesAvailable = this.prizes.filter(
+      (prize) => prize.available && prize.prizeType == PrizeType.Big
+    ).length;
   }
 }
