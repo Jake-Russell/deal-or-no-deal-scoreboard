@@ -10,15 +10,15 @@
   ></div>
   <ng-template #offerPrize
     ><h2>
-      He is offering you "{{ this.offer.name }}". Would you like to switch your
-      box for it?
+      He is offering you <em>{{ this.offer.name }}</em
+      >. Would you like to switch your box for it?
     </h2></ng-template
   >
   <ng-template #offerGambleBox
     ><h2 *ngIf="this.prizeService.getAllAvailablePrizes().length == 1">
-      He is offering you the Gamble Box. Would you like to switch "{{
-        this.prizeService.getAllAvailablePrizes()[0].name
-      }}" for the Gamble Box?
+      He is offering you the <em>Gamble Box</em>. Would you like to switch
+      <em>{{ this.prizeService.getAllAvailablePrizes()[0].name }}</em> for the
+      Gamble Box?
     </h2></ng-template
   >
 

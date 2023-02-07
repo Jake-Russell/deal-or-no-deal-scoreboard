@@ -85,9 +85,7 @@ export class PrizeService {
   private totalPrizeValue: number = 0;
 
   constructor() {
-    this.calculateNumberOfAvailableLowValuePrizes();
-    this.calculateNumberOfAvailableHighValuePrizes();
-    this.totalPrizeValue = this.calculateTotalPrizeValue();
+    this.resetGame();
   }
 
   numberOfSmallPrizesAvailable: number = 0;
@@ -110,7 +108,6 @@ export class PrizeService {
     });
     this.calculateNumberOfAvailableLowValuePrizes();
     this.calculateNumberOfAvailableHighValuePrizes();
-    this.calculateNumberOfAvailablePrizes();
     this.totalPrizeValue -= prizeToRemove.value;
   }
 
@@ -139,6 +136,13 @@ export class PrizeService {
     return prizeToOffer[0];
   }
 
+  resetGame() {
+    this.prizes.forEach((prize) => (prize.available = true));
+    this.calculateNumberOfAvailableHighValuePrizes();
+    this.calculateNumberOfAvailableLowValuePrizes();
+    this.calculateTotalPrizeValue();
+  }
+
   private calculateNumberOfAvailableLowValuePrizes() {
     this.numberOfSmallPrizesAvailable = this.prizes.filter(
       (prize) => prize.available && prize.prizeType == PrizeType.LowValue
@@ -155,17 +159,10 @@ export class PrizeService {
     return this.numberOfBigPrizesAvailable + this.numberOfSmallPrizesAvailable;
   }
 
-  private calculateTotalPrizeValue(): number {
-    var value = 0;
-    this.getAllAvailablePrizes().forEach((prize) => (value += prize.value));
-    return value;
-  }
-
-  resetGame() {
-    this.prizes.forEach((prize) => (prize.available = true));
-    this.calculateNumberOfAvailableHighValuePrizes();
-    this.calculateNumberOfAvailableLowValuePrizes();
-    this.calculateNumberOfAvailablePrizes();
-    this.calculateTotalPrizeValue();
+  private calculateTotalPrizeValue() {
+    this.totalPrizeValue = 0;
+    this.getAllAvailablePrizes().forEach(
+      (prize) => (this.totalPrizeValue += prize.value)
+    );
   }
 }
