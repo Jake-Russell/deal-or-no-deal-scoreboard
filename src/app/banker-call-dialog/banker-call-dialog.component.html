@@ -1,12 +1,26 @@
 <div class="content-wrapper">
   <img src="../../assets/images/deal_or_no_deal_phone.png" alt="" />
   <h1>The banker is calling!</h1>
-
-  <h2 *ngIf="this.prizeService.getAllAvailablePrizes().length == 1">
-    He is offering you the Gamble Box. Would you like to switch "{{
-      this.prizeService.getAllAvailablePrizes()[0].name
-    }}" for the Gamble Box?
-  </h2>
+  <div
+    *ngIf="
+      this.prizeService.getAllAvailablePrizes().length != 1;
+      then offerPrize;
+      else offerGambleBox
+    "
+  ></div>
+  <ng-template #offerPrize
+    ><h2>
+      He is offering you {{ this.prizeService.getOffer().name }}. Would you like
+      to switch your box for it?
+    </h2></ng-template
+  >
+  <ng-template #offerGambleBox
+    ><h2 *ngIf="this.prizeService.getAllAvailablePrizes().length == 1">
+      He is offering you the Gamble Box. Would you like to switch "{{
+        this.prizeService.getAllAvailablePrizes()[0].name
+      }}" for the Gamble Box?
+    </h2></ng-template
+  >
 
   <div mat-dialog-actions>
     <button mat-button class="deal" (click)="click(true)">

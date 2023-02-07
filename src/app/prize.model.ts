@@ -4,4 +4,5 @@ export interface Prize {
   name: String;
   prizeType: PrizeType;
   available: Boolean;
+  value: number;
 }

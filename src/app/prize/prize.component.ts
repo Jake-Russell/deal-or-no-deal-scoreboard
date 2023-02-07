@@ -17,15 +17,14 @@ export class PrizeComponent {
   click() {
     if (this.prize.available) {
       this.prize.available = false;
-      this.prizeService.numberOfPrizesRemoved++;
       this.prizeService.removePrize(this.prize);
 
       if (this.prizeService.callBanker()) {
-        console.log('***CALLING BANKER***');
         this.bankerCall.emit();
       }
       if (
-        this.prizeService.getAllAvailablePrizes().length == 1
+        this.prizeService.getAllAvailablePrizes().length == 1 &&
+        this.prizeService.includeGambleBox
       ) {
         this.bankerCall.emit();
       }
