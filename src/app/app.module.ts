@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { PrizeListComponent } from './prize-list/prize-list.component';
 import { BankerCallDialogComponent } from './banker-call-dialog/banker-call-dialog.component';
+import { DealMadeDialogComponent } from './deal-made-dialog/deal-made-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BankerCallDialogComponent } from './banker-call-dialog/banker-call-dial
     PrizeComponent,
     PrizeListComponent,
     BankerCallDialogComponent,
+    DealMadeDialogComponent,
   ],
   imports: [
     BrowserModule,

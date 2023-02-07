@@ -1,4 +1,4 @@
 export enum PrizeType {
-  Big = 'Big',
-  Small = 'Small',
+  HighValue = 'High Value',
+  LowValue = 'Low Value',
 }

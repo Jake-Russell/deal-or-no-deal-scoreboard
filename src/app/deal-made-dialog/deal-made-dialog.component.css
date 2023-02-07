@@ -1,0 +1,15 @@
+button {
+  width: 40%;
+}
+
+.deal {
+  background: rgb(69, 154, 201);
+  background: linear-gradient(
+    rgba(69, 154, 201, 1) 0%,
+    rgba(24, 102, 154, 1) 100%
+  );
+}
+
+.mat-mdc-dialog-actions {
+  justify-content: space-evenly;
+}

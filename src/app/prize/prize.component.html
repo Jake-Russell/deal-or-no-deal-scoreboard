@@ -1,8 +1,8 @@
 <mat-card
   (click)="click()"
   [ngClass]="{
-    'big-prize': prize.prizeType == 'Big',
-    'small-prize': prize.prizeType == 'Small',
+    'high-value-prize': prize.prizeType == 'High Value',
+    'low-value-prize': prize.prizeType == 'Low Value',
     unavailable: !prize.available
   }"
 >

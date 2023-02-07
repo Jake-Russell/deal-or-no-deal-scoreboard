@@ -9,7 +9,7 @@ mat-card:hover {
   cursor: pointer;
 }
 
-.big-prize {
+.high-value-prize {
   background: rgb(216, 74, 59);
   background: linear-gradient(
     rgba(216, 74, 59, 1) 0%,
@@ -17,7 +17,7 @@ mat-card:hover {
   );
 }
 
-.small-prize {
+.low-value-prize {
   background: rgb(69, 154, 201);
   background: linear-gradient(
     rgba(69, 154, 201, 1) 0%,
