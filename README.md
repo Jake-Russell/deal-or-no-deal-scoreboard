@@ -1,27 +1,40 @@
-# DealOrNoDeal
+# Deal Or No Deal Score Board
+
+A simple web application for emulating the score board in a game of Deal or No Deal. It is intended to be used solely as an electronic scoreboard, accompanying physical boxes as used in the TV show game. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
-## Development server
+# Customising The Scoreboard
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The scoreboard can be customised by changing the available prizes, the frequency of the banker calling, and the inclusion of a Gamble Box in the game.
 
-## Code scaffolding
+## Customising Prizes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Prizes can be customised by changing them in the `prizes` array in `prize.service.ts`. Each element of the array is a `Prize` object comprising of the following properties:
 
-## Build
+- `name` - A string representing the displayed name of the prize
+- `prizeType` - A `PrizeType` enum corresponding to if the prize is a high or low value prize. This correlates to a blue prize (low value) or a red prize (high value) in the game.
+- `available` - A boolean value used to represent if the prize is still available in the game or not.
+- `value` - An integer representing the value of the prize. Lower value prizes should have a low number, and higher value prizes should have a high number. This is used to determine what prize the banker should offer. It is recommended that their are no duplicate values, and each prize increases value by one. For example, if there are 12 prizes, then the worst prize should have a value of 1 and the best prize should have a value of 12.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Customising Banker Frequency
 
-## Running unit tests
+By default, the banker is set to call after every 5 turns. This can be customised by changing the value of `bankerCallFrequency` in `prize.service.ts`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Customising Gamble Box Inclusion
 
-## Running end-to-end tests
+By default, the game is configured to include a Gamble Box. This means that when the player reaches one remaining box, the banker will call to offer them a trade of whatever prize they have won for a Gamble Box, which the player is unaware of. This feature can be disabled by toggling the value of `includeGambleBox` in `prize.service.ts`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Using the Scoreboard
 
-## Further help
+When the scoreboard is up and running in a browser (see [Running Locally](#running-locally)), prizes can be removed from the board by clicking on them. Once removed, they will become greyed out and unclickable.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+After the number of turns configured before the banker calls has been reached (which by default is five), a popup will appear with the banker's offer. The player will be prompted to select either Deal or No Deal. If they choose Deal, the game ends and they win the offered prize. Otherwise, the game will continue until the banker makes another offer.
+
+If playing with a Gamble Box, the banker will make another offer when only one box remains. This offer will be a trade of the prize the player has won for the Gamble Box.
+
+When any deal is accepted, the game will end and the scoreboard will be reset.
+
+# Running Locally
+
+Run `ng serve` or `npm start` for a development server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
