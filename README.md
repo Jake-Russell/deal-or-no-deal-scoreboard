@@ -2,8 +2,6 @@
 
 A simple web application for emulating the scoreboard in a game of Deal or No Deal. It is intended to be used solely as an electronic scoreboard, accompanying physical boxes as used in the TV show game. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
-
 # Customising The Scoreboard
 
 The scoreboard can be customised by changing the available prizes, the frequency of the banker calling, and the inclusion of a Gamble Box in the game.
