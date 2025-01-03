@@ -8,7 +8,7 @@ import { Prize } from './prize.model';
 export class PrizeService {
   private prizes: Prize[] = [
     {
-      name: 'Bag of Wotsit Crunch',
+      name: 'Bag of Crisps',
       prizeType: PrizeType.LowValue,
       available: true,
       value: 1,
@@ -38,7 +38,7 @@ export class PrizeService {
       value: 5,
     },
     {
-      name: 'Trip to Cotswold Wildlife Park',
+      name: 'Trip to the Zoo',
       prizeType: PrizeType.LowValue,
       available: true,
       value: 6,
