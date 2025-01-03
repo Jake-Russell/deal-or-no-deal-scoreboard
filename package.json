@@ -1,5 +1,5 @@
 {
-  "name": "deal-or-no-deal",
+  "name": "deal-or-no-deal-scoreboard",
   "version": "1.0.1",
   "scripts": {
     "ng": "ng",
