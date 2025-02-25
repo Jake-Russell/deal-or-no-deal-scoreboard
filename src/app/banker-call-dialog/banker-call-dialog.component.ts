@@ -6,9 +6,10 @@ import { PrizeService } from '../prize.service';
 import { PrizeType } from '../prize-type.enum';
 
 @Component({
-  selector: 'app-banker-call-dialog',
-  templateUrl: './banker-call-dialog.component.html',
-  styleUrls: ['./banker-call-dialog.component.css'],
+    selector: 'app-banker-call-dialog',
+    templateUrl: './banker-call-dialog.component.html',
+    styleUrls: ['./banker-call-dialog.component.css'],
+    standalone: false
 })
 export class BankerCallDialogComponent implements OnInit {
   protected offer!: Prize;

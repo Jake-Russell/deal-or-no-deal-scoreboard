@@ -4,9 +4,10 @@ import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
 
 @Component({
-  selector: 'app-prize',
-  templateUrl: './prize.component.html',
-  styleUrls: ['./prize.component.css'],
+    selector: 'app-prize',
+    templateUrl: './prize.component.html',
+    styleUrls: ['./prize.component.css'],
+    standalone: false
 })
 export class PrizeComponent {
   @Input() prize!: Prize;
