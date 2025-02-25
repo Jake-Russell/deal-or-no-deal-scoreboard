@@ -4,9 +4,10 @@ import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
 
 @Component({
-  selector: 'app-deal-made-dialog',
-  templateUrl: './deal-made-dialog.component.html',
-  styleUrls: ['./deal-made-dialog.component.css'],
+    selector: 'app-deal-made-dialog',
+    templateUrl: './deal-made-dialog.component.html',
+    styleUrls: ['./deal-made-dialog.component.css'],
+    standalone: false
 })
 export class DealMadeDialogComponent {
   constructor(

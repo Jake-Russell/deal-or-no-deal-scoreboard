@@ -7,9 +7,10 @@ import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
 
 @Component({
-  selector: 'prize-list',
-  templateUrl: './prize-list.component.html',
-  styleUrls: ['./prize-list.component.css'],
+    selector: 'prize-list',
+    templateUrl: './prize-list.component.html',
+    styleUrls: ['./prize-list.component.css'],
+    standalone: false
 })
 export class PrizeListComponent {
   constructor(
