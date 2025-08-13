@@ -9,21 +9,23 @@
       Number of Available Small Prizes =
       {{ this.prizeService.numberOfSmallPrizesAvailable }}
     </h2>
-    <app-prize
-      *ngFor="let smallPrize of this.prizeService.getAllSmallPrizes()"
-      [prize]="smallPrize"
-      (bankerCall)="bankerCall()"
-    ></app-prize>
+    @for (smallPrize of this.prizeService.getAllSmallPrizes(); track smallPrize) {
+      <app-prize
+        [prize]="smallPrize"
+        (bankerCall)="bankerCall()"
+      ></app-prize>
+    }
   </div>
   <div class="child">
     <h2>
       Number of Available Big Prizes =
       {{ this.prizeService.numberOfBigPrizesAvailable }}
     </h2>
-    <app-prize
-      *ngFor="let bigPrize of this.prizeService.getAllBigPrizes()"
-      [prize]="bigPrize"
-      (bankerCall)="bankerCall()"
-    ></app-prize>
+    @for (bigPrize of this.prizeService.getAllBigPrizes(); track bigPrize) {
+      <app-prize
+        [prize]="bigPrize"
+        (bankerCall)="bankerCall()"
+      ></app-prize>
+    }
   </div>
 </div>
