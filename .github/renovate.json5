@@ -12,4 +12,5 @@
       allowedVersions: "<5.9.0",
     },
   ],
+  schedule: ["before 5am on monday"],
 }
