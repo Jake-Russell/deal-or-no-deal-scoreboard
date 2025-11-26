@@ -6,11 +6,6 @@
       matchManagers: ["*"],
       groupName: "{{manager}} dependencies",
     },
-    {
-      // Keep TypeScript below 5.9 until Angular supports it
-      matchPackageNames: ["typescript"],
-      allowedVersions: "<5.9.0",
-    },
   ],
   schedule: ["before 5am on monday"],
 }
