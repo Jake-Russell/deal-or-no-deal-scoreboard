@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { PrizeComponent } from './prize/prize.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -28,5 +28,5 @@ import { DealMadeDialogComponent } from './deal-made-dialog/deal-made-dialog.com
         MatCardModule,
         MatDialogModule,
         MatIconModule,
-        MatButtonModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatButtonModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule {}

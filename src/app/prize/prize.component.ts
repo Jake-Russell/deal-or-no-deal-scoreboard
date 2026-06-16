@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { PrizeType } from '../prize-type.enum';
 import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
@@ -7,6 +7,7 @@ import { PrizeService } from '../prize.service';
     selector: 'app-prize',
     templateUrl: './prize.component.html',
     styleUrls: ['./prize.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PrizeComponent {

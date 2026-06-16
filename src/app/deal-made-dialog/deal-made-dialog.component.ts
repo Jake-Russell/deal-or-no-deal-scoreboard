@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Prize } from '../prize.model';
 import { PrizeService } from '../prize.service';
@@ -7,6 +7,7 @@ import { PrizeService } from '../prize.service';
     selector: 'app-deal-made-dialog',
     templateUrl: './deal-made-dialog.component.html',
     styleUrls: ['./deal-made-dialog.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DealMadeDialogComponent {
