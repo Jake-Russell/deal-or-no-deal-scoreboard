@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BankerCallDialogComponent } from '../banker-call-dialog/banker-call-dialog.component';
 import { DealMadeDialogComponent } from '../deal-made-dialog/deal-made-dialog.component';
@@ -10,6 +10,7 @@ import { PrizeService } from '../prize.service';
     selector: 'prize-list',
     templateUrl: './prize-list.component.html',
     styleUrls: ['./prize-list.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PrizeListComponent {

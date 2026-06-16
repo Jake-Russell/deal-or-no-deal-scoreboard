@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Prize } from '../prize.model';
 import { DialogReturn } from '../dialog-return.model';
@@ -9,6 +9,7 @@ import { PrizeType } from '../prize-type.enum';
     selector: 'app-banker-call-dialog',
     templateUrl: './banker-call-dialog.component.html',
     styleUrls: ['./banker-call-dialog.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BankerCallDialogComponent implements OnInit {
